@@ -1,0 +1,804 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3CE5DA04DCFF53E4DD3D3075 /* Pods_SushiNekoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8DAB659C72C3B88EB1F2517 /* Pods_SushiNekoTests.framework */; };
+		43C4813CAE53548D5773F7DB /* Pods_SushiNeko.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A155451944172C0B1A02FD59 /* Pods_SushiNeko.framework */; };
+		5B28FAE81CDA0C610041A87E /* sfx_swipe.caf in Resources */ = {isa = PBXBuildFile; fileRef = 5B28FAE71CDA0C610041A87E /* sfx_swipe.caf */; };
+		5B686BD71D10B3DC00B3E1C5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B686BD61D10B3DC00B3E1C5 /* GoogleService-Info.plist */; };
+		5B7DA06A1CB6C42A00069506 /* SushiPiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7DA0691CB6C42A00069506 /* SushiPiece.swift */; };
+		5BC666B71CB40206000C3C09 /* assets.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 5BC666B61CB40206000C3C09 /* assets.atlas */; };
+		5BCDD4711CB3F10700CDA37E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCDD4701CB3F10700CDA37E /* AppDelegate.swift */; };
+		5BCDD4731CB3F10700CDA37E /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5BCDD4721CB3F10700CDA37E /* GameScene.sks */; };
+		5BCDD4751CB3F10700CDA37E /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCDD4741CB3F10700CDA37E /* GameScene.swift */; };
+		5BCDD4771CB3F10700CDA37E /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCDD4761CB3F10700CDA37E /* GameViewController.swift */; };
+		5BCDD47A1CB3F10700CDA37E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BCDD4781CB3F10700CDA37E /* Main.storyboard */; };
+		5BCDD47C1CB3F10700CDA37E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BCDD47B1CB3F10700CDA37E /* Assets.xcassets */; };
+		5BCDD47F1CB3F10700CDA37E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BCDD47D1CB3F10700CDA37E /* LaunchScreen.storyboard */; };
+		5BCDD48A1CB3F10700CDA37E /* Sushi_NekoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCDD4891CB3F10700CDA37E /* Sushi_NekoTests.swift */; };
+		5BCDD4951CB3F10700CDA37E /* Sushi_NekoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCDD4941CB3F10700CDA37E /* Sushi_NekoUITests.swift */; };
+		5BED6D1E1CBBC116004E758D /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BED6D1D1CBBC116004E758D /* Character.swift */; };
+		5BED6D201CBBC3E8004E758D /* AnimationActions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5BED6D1F1CBBC3E8004E758D /* AnimationActions.sks */; };
+		5BED6D311CBBE2A9004E758D /* MSButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BED6D221CBBE2A9004E758D /* MSButtonNode.swift */; };
+		5BED6D321CBBE2A9004E758D /* MSReferenceNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BED6D231CBBE2A9004E758D /* MSReferenceNode.swift */; };
+		5BED6D331CBBE2A9004E758D /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BED6D251CBBE2A9004E758D /* CGFloat+Extensions.swift */; };
+		5BED6D341CBBE2A9004E758D /* CGPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BED6D261CBBE2A9004E758D /* CGPoint+Extensions.swift */; };
+		5BED6D351CBBE2A9004E758D /* CGVector+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BED6D271CBBE2A9004E758D /* CGVector+Extensions.swift */; };
+		5BED6D361CBBE2A9004E758D /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BED6D281CBBE2A9004E758D /* Int+Extensions.swift */; };
+		5BED6D371CBBE2A9004E758D /* SKAction+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BED6D291CBBE2A9004E758D /* SKAction+Extensions.swift */; };
+		5BED6D381CBBE2A9004E758D /* SKAction+SpecialEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BED6D2A1CBBE2A9004E758D /* SKAction+SpecialEffects.swift */; };
+		5BED6D391CBBE2A9004E758D /* SKColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BED6D2B1CBBE2A9004E758D /* SKColor+Extensions.swift */; };
+		5BED6D3A1CBBE2A9004E758D /* SKNode+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BED6D2C1CBBE2A9004E758D /* SKNode+Extensions.swift */; };
+		5BED6D3B1CBBE2A9004E758D /* SKTAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BED6D2D1CBBE2A9004E758D /* SKTAudio.swift */; };
+		5BED6D3C1CBBE2A9004E758D /* SKTEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BED6D2E1CBBE2A9004E758D /* SKTEffects.swift */; };
+		5BED6D3D1CBBE2A9004E758D /* SKTTimingFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BED6D2F1CBBE2A9004E758D /* SKTTimingFunctions.swift */; };
+		5BED6D3E1CBBE2A9004E758D /* Vector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BED6D301CBBE2A9004E758D /* Vector3.swift */; };
+		8B1B5A26FC9455714D9A447D /* Pods_SushiNekoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5885A5E64F36E7A3B80F88B /* Pods_SushiNekoUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5BCDD4861CB3F10700CDA37E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5BCDD4651CB3F10700CDA37E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5BCDD46C1CB3F10700CDA37E;
+			remoteInfo = "Sushi Neko";
+		};
+		5BCDD4911CB3F10700CDA37E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5BCDD4651CB3F10700CDA37E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5BCDD46C1CB3F10700CDA37E;
+			remoteInfo = "Sushi Neko";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3126B838311E8CB3E78D16A4 /* Pods-SushiNekoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SushiNekoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SushiNekoTests/Pods-SushiNekoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5B28FAE71CDA0C610041A87E /* sfx_swipe.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sfx_swipe.caf; sourceTree = "<group>"; };
+		5B686BD61D10B3DC00B3E1C5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5B7DA0691CB6C42A00069506 /* SushiPiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SushiPiece.swift; sourceTree = "<group>"; };
+		5BC666B61CB40206000C3C09 /* assets.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = assets.atlas; sourceTree = "<group>"; };
+		5BCDD46D1CB3F10700CDA37E /* SushiNeko.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SushiNeko.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BCDD4701CB3F10700CDA37E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5BCDD4721CB3F10700CDA37E /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		5BCDD4741CB3F10700CDA37E /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		5BCDD4761CB3F10700CDA37E /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		5BCDD4791CB3F10700CDA37E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5BCDD47B1CB3F10700CDA37E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5BCDD47E1CB3F10700CDA37E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5BCDD4801CB3F10700CDA37E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5BCDD4851CB3F10700CDA37E /* SushiNeko.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SushiNeko.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BCDD4891CB3F10700CDA37E /* Sushi_NekoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sushi_NekoTests.swift; sourceTree = "<group>"; };
+		5BCDD48B1CB3F10700CDA37E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5BCDD4901CB3F10700CDA37E /* SushiNeko.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SushiNeko.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BCDD4941CB3F10700CDA37E /* Sushi_NekoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sushi_NekoUITests.swift; sourceTree = "<group>"; };
+		5BCDD4961CB3F10700CDA37E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5BED6D1D1CBBC116004E758D /* Character.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		5BED6D1F1CBBC3E8004E758D /* AnimationActions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = AnimationActions.sks; sourceTree = "<group>"; };
+		5BED6D221CBBE2A9004E758D /* MSButtonNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSButtonNode.swift; sourceTree = "<group>"; };
+		5BED6D231CBBE2A9004E758D /* MSReferenceNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSReferenceNode.swift; sourceTree = "<group>"; };
+		5BED6D251CBBE2A9004E758D /* CGFloat+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extensions.swift"; sourceTree = "<group>"; };
+		5BED6D261CBBE2A9004E758D /* CGPoint+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extensions.swift"; sourceTree = "<group>"; };
+		5BED6D271CBBE2A9004E758D /* CGVector+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGVector+Extensions.swift"; sourceTree = "<group>"; };
+		5BED6D281CBBE2A9004E758D /* Int+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
+		5BED6D291CBBE2A9004E758D /* SKAction+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKAction+Extensions.swift"; sourceTree = "<group>"; };
+		5BED6D2A1CBBE2A9004E758D /* SKAction+SpecialEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKAction+SpecialEffects.swift"; sourceTree = "<group>"; };
+		5BED6D2B1CBBE2A9004E758D /* SKColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKColor+Extensions.swift"; sourceTree = "<group>"; };
+		5BED6D2C1CBBE2A9004E758D /* SKNode+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKNode+Extensions.swift"; sourceTree = "<group>"; };
+		5BED6D2D1CBBE2A9004E758D /* SKTAudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKTAudio.swift; sourceTree = "<group>"; };
+		5BED6D2E1CBBE2A9004E758D /* SKTEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKTEffects.swift; sourceTree = "<group>"; };
+		5BED6D2F1CBBE2A9004E758D /* SKTTimingFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKTTimingFunctions.swift; sourceTree = "<group>"; };
+		5BED6D301CBBE2A9004E758D /* Vector3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector3.swift; sourceTree = "<group>"; };
+		60476900E1B7087DFC9B318E /* Pods-SushiNeko.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SushiNeko.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SushiNeko/Pods-SushiNeko.debug.xcconfig"; sourceTree = "<group>"; };
+		8E892F52A186C596BFABC2CC /* Pods-SushiNekoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SushiNekoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SushiNekoTests/Pods-SushiNekoTests.release.xcconfig"; sourceTree = "<group>"; };
+		A155451944172C0B1A02FD59 /* Pods_SushiNeko.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SushiNeko.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A300B3F6A7D8F3D58E4D3D4E /* Pods-SushiNekoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SushiNekoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SushiNekoUITests/Pods-SushiNekoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		ADE4C772476F048B024DDB92 /* Pods-SushiNeko.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SushiNeko.release.xcconfig"; path = "Pods/Target Support Files/Pods-SushiNeko/Pods-SushiNeko.release.xcconfig"; sourceTree = "<group>"; };
+		C8DAB659C72C3B88EB1F2517 /* Pods_SushiNekoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SushiNekoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5885A5E64F36E7A3B80F88B /* Pods_SushiNekoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SushiNekoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD96885FB6B9845F9356F0CF /* Pods-SushiNekoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SushiNekoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SushiNekoUITests/Pods-SushiNekoUITests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5BCDD46A1CB3F10700CDA37E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43C4813CAE53548D5773F7DB /* Pods_SushiNeko.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BCDD4821CB3F10700CDA37E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3CE5DA04DCFF53E4DD3D3075 /* Pods_SushiNekoTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BCDD48D1CB3F10700CDA37E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B1B5A26FC9455714D9A447D /* Pods_SushiNekoUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5B28FAE61CDA0C610041A87E /* SFX */ = {
+			isa = PBXGroup;
+			children = (
+				5B28FAE71CDA0C610041A87E /* sfx_swipe.caf */,
+			);
+			path = SFX;
+			sourceTree = "<group>";
+		};
+		5BCDD4641CB3F10700CDA37E = {
+			isa = PBXGroup;
+			children = (
+				5BCDD46F1CB3F10700CDA37E /* SushiNeko */,
+				5BCDD4881CB3F10700CDA37E /* SushiNekoTests */,
+				5BCDD4931CB3F10700CDA37E /* SushiNekoUITests */,
+				5BCDD46E1CB3F10700CDA37E /* Products */,
+				D119FC44BBE37D0AE526132D /* Pods */,
+				ED73F02CD193DDE97D6DD11A /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		5BCDD46E1CB3F10700CDA37E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5BCDD46D1CB3F10700CDA37E /* SushiNeko.app */,
+				5BCDD4851CB3F10700CDA37E /* SushiNeko.xctest */,
+				5BCDD4901CB3F10700CDA37E /* SushiNeko.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5BCDD46F1CB3F10700CDA37E /* SushiNeko */ = {
+			isa = PBXGroup;
+			children = (
+				5BED6D211CBBE2A9004E758D /* Utils */,
+				5BC666B61CB40206000C3C09 /* assets.atlas */,
+				5BCDD4701CB3F10700CDA37E /* AppDelegate.swift */,
+				5BCDD4721CB3F10700CDA37E /* GameScene.sks */,
+				5BCDD4741CB3F10700CDA37E /* GameScene.swift */,
+				5BCDD4761CB3F10700CDA37E /* GameViewController.swift */,
+				5BCDD4781CB3F10700CDA37E /* Main.storyboard */,
+				5B28FAE61CDA0C610041A87E /* SFX */,
+				5BCDD47B1CB3F10700CDA37E /* Assets.xcassets */,
+				5BCDD47D1CB3F10700CDA37E /* LaunchScreen.storyboard */,
+				5B686BD61D10B3DC00B3E1C5 /* GoogleService-Info.plist */,
+				5BCDD4801CB3F10700CDA37E /* Info.plist */,
+				5B7DA0691CB6C42A00069506 /* SushiPiece.swift */,
+				5BED6D1D1CBBC116004E758D /* Character.swift */,
+				5BED6D1F1CBBC3E8004E758D /* AnimationActions.sks */,
+			);
+			name = SushiNeko;
+			path = "Sushi Neko";
+			sourceTree = "<group>";
+		};
+		5BCDD4881CB3F10700CDA37E /* SushiNekoTests */ = {
+			isa = PBXGroup;
+			children = (
+				5BCDD4891CB3F10700CDA37E /* Sushi_NekoTests.swift */,
+				5BCDD48B1CB3F10700CDA37E /* Info.plist */,
+			);
+			name = SushiNekoTests;
+			path = "Sushi NekoTests";
+			sourceTree = "<group>";
+		};
+		5BCDD4931CB3F10700CDA37E /* SushiNekoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5BCDD4941CB3F10700CDA37E /* Sushi_NekoUITests.swift */,
+				5BCDD4961CB3F10700CDA37E /* Info.plist */,
+			);
+			name = SushiNekoUITests;
+			path = "Sushi NekoUITests";
+			sourceTree = "<group>";
+		};
+		5BED6D211CBBE2A9004E758D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				5BED6D221CBBE2A9004E758D /* MSButtonNode.swift */,
+				5BED6D231CBBE2A9004E758D /* MSReferenceNode.swift */,
+				5BED6D241CBBE2A9004E758D /* SKTUtils */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		5BED6D241CBBE2A9004E758D /* SKTUtils */ = {
+			isa = PBXGroup;
+			children = (
+				5BED6D251CBBE2A9004E758D /* CGFloat+Extensions.swift */,
+				5BED6D261CBBE2A9004E758D /* CGPoint+Extensions.swift */,
+				5BED6D271CBBE2A9004E758D /* CGVector+Extensions.swift */,
+				5BED6D281CBBE2A9004E758D /* Int+Extensions.swift */,
+				5BED6D291CBBE2A9004E758D /* SKAction+Extensions.swift */,
+				5BED6D2A1CBBE2A9004E758D /* SKAction+SpecialEffects.swift */,
+				5BED6D2B1CBBE2A9004E758D /* SKColor+Extensions.swift */,
+				5BED6D2C1CBBE2A9004E758D /* SKNode+Extensions.swift */,
+				5BED6D2D1CBBE2A9004E758D /* SKTAudio.swift */,
+				5BED6D2E1CBBE2A9004E758D /* SKTEffects.swift */,
+				5BED6D2F1CBBE2A9004E758D /* SKTTimingFunctions.swift */,
+				5BED6D301CBBE2A9004E758D /* Vector3.swift */,
+			);
+			path = SKTUtils;
+			sourceTree = "<group>";
+		};
+		D119FC44BBE37D0AE526132D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				60476900E1B7087DFC9B318E /* Pods-SushiNeko.debug.xcconfig */,
+				ADE4C772476F048B024DDB92 /* Pods-SushiNeko.release.xcconfig */,
+				3126B838311E8CB3E78D16A4 /* Pods-SushiNekoTests.debug.xcconfig */,
+				8E892F52A186C596BFABC2CC /* Pods-SushiNekoTests.release.xcconfig */,
+				A300B3F6A7D8F3D58E4D3D4E /* Pods-SushiNekoUITests.debug.xcconfig */,
+				FD96885FB6B9845F9356F0CF /* Pods-SushiNekoUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		ED73F02CD193DDE97D6DD11A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A155451944172C0B1A02FD59 /* Pods_SushiNeko.framework */,
+				C8DAB659C72C3B88EB1F2517 /* Pods_SushiNekoTests.framework */,
+				F5885A5E64F36E7A3B80F88B /* Pods_SushiNekoUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5BCDD46C1CB3F10700CDA37E /* SushiNeko */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5BCDD4991CB3F10700CDA37E /* Build configuration list for PBXNativeTarget "SushiNeko" */;
+			buildPhases = (
+				39BA42AED530A0712ABE5360 /* 📦 Check Pods Manifest.lock */,
+				5BCDD4691CB3F10700CDA37E /* Sources */,
+				5BCDD46A1CB3F10700CDA37E /* Frameworks */,
+				5BCDD46B1CB3F10700CDA37E /* Resources */,
+				CFAD9098CD5ECFFF6C0CE376 /* 📦 Embed Pods Frameworks */,
+				9C3DD1A234E32DA610FA6E74 /* 📦 Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SushiNeko;
+			productName = "Sushi Neko";
+			productReference = 5BCDD46D1CB3F10700CDA37E /* SushiNeko.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5BCDD4841CB3F10700CDA37E /* SushiNekoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5BCDD49C1CB3F10700CDA37E /* Build configuration list for PBXNativeTarget "SushiNekoTests" */;
+			buildPhases = (
+				D05B66DF5B29EB831533D66F /* 📦 Check Pods Manifest.lock */,
+				5BCDD4811CB3F10700CDA37E /* Sources */,
+				5BCDD4821CB3F10700CDA37E /* Frameworks */,
+				5BCDD4831CB3F10700CDA37E /* Resources */,
+				7E6C5450E6309BE993CCB2C1 /* 📦 Embed Pods Frameworks */,
+				B3FF0AED3BB7BE121F3C703E /* 📦 Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5BCDD4871CB3F10700CDA37E /* PBXTargetDependency */,
+			);
+			name = SushiNekoTests;
+			productName = "Sushi NekoTests";
+			productReference = 5BCDD4851CB3F10700CDA37E /* SushiNeko.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5BCDD48F1CB3F10700CDA37E /* SushiNekoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5BCDD49F1CB3F10700CDA37E /* Build configuration list for PBXNativeTarget "SushiNekoUITests" */;
+			buildPhases = (
+				3991853623E515858E6C27F5 /* 📦 Check Pods Manifest.lock */,
+				5BCDD48C1CB3F10700CDA37E /* Sources */,
+				5BCDD48D1CB3F10700CDA37E /* Frameworks */,
+				5BCDD48E1CB3F10700CDA37E /* Resources */,
+				52228AFC0B97A28C1617348A /* 📦 Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5BCDD4921CB3F10700CDA37E /* PBXTargetDependency */,
+			);
+			name = SushiNekoUITests;
+			productName = "Sushi NekoUITests";
+			productReference = 5BCDD4901CB3F10700CDA37E /* SushiNeko.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5BCDD4651CB3F10700CDA37E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Make School";
+				TargetAttributes = {
+					5BCDD46C1CB3F10700CDA37E = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+					5BCDD4841CB3F10700CDA37E = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = 5BCDD46C1CB3F10700CDA37E;
+					};
+					5BCDD48F1CB3F10700CDA37E = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = 5BCDD46C1CB3F10700CDA37E;
+					};
+				};
+			};
+			buildConfigurationList = 5BCDD4681CB3F10700CDA37E /* Build configuration list for PBXProject "SushiNeko" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5BCDD4641CB3F10700CDA37E;
+			productRefGroup = 5BCDD46E1CB3F10700CDA37E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5BCDD46C1CB3F10700CDA37E /* SushiNeko */,
+				5BCDD4841CB3F10700CDA37E /* SushiNekoTests */,
+				5BCDD48F1CB3F10700CDA37E /* SushiNekoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5BCDD46B1CB3F10700CDA37E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BCDD4731CB3F10700CDA37E /* GameScene.sks in Resources */,
+				5B686BD71D10B3DC00B3E1C5 /* GoogleService-Info.plist in Resources */,
+				5BED6D201CBBC3E8004E758D /* AnimationActions.sks in Resources */,
+				5BCDD47F1CB3F10700CDA37E /* LaunchScreen.storyboard in Resources */,
+				5BCDD47C1CB3F10700CDA37E /* Assets.xcassets in Resources */,
+				5BC666B71CB40206000C3C09 /* assets.atlas in Resources */,
+				5B28FAE81CDA0C610041A87E /* sfx_swipe.caf in Resources */,
+				5BCDD47A1CB3F10700CDA37E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BCDD4831CB3F10700CDA37E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BCDD48E1CB3F10700CDA37E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3991853623E515858E6C27F5 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		39BA42AED530A0712ABE5360 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		52228AFC0B97A28C1617348A /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SushiNekoUITests/Pods-SushiNekoUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7E6C5450E6309BE993CCB2C1 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SushiNekoTests/Pods-SushiNekoTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9C3DD1A234E32DA610FA6E74 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SushiNeko/Pods-SushiNeko-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B3FF0AED3BB7BE121F3C703E /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SushiNekoTests/Pods-SushiNekoTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CFAD9098CD5ECFFF6C0CE376 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SushiNeko/Pods-SushiNeko-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D05B66DF5B29EB831533D66F /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5BCDD4691CB3F10700CDA37E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BED6D351CBBE2A9004E758D /* CGVector+Extensions.swift in Sources */,
+				5BED6D321CBBE2A9004E758D /* MSReferenceNode.swift in Sources */,
+				5BED6D3A1CBBE2A9004E758D /* SKNode+Extensions.swift in Sources */,
+				5BCDD4751CB3F10700CDA37E /* GameScene.swift in Sources */,
+				5BED6D371CBBE2A9004E758D /* SKAction+Extensions.swift in Sources */,
+				5BCDD4771CB3F10700CDA37E /* GameViewController.swift in Sources */,
+				5B7DA06A1CB6C42A00069506 /* SushiPiece.swift in Sources */,
+				5BED6D341CBBE2A9004E758D /* CGPoint+Extensions.swift in Sources */,
+				5BED6D381CBBE2A9004E758D /* SKAction+SpecialEffects.swift in Sources */,
+				5BED6D311CBBE2A9004E758D /* MSButtonNode.swift in Sources */,
+				5BED6D3D1CBBE2A9004E758D /* SKTTimingFunctions.swift in Sources */,
+				5BED6D391CBBE2A9004E758D /* SKColor+Extensions.swift in Sources */,
+				5BED6D361CBBE2A9004E758D /* Int+Extensions.swift in Sources */,
+				5BED6D1E1CBBC116004E758D /* Character.swift in Sources */,
+				5BED6D3B1CBBE2A9004E758D /* SKTAudio.swift in Sources */,
+				5BED6D331CBBE2A9004E758D /* CGFloat+Extensions.swift in Sources */,
+				5BED6D3C1CBBE2A9004E758D /* SKTEffects.swift in Sources */,
+				5BED6D3E1CBBE2A9004E758D /* Vector3.swift in Sources */,
+				5BCDD4711CB3F10700CDA37E /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BCDD4811CB3F10700CDA37E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BCDD48A1CB3F10700CDA37E /* Sushi_NekoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BCDD48C1CB3F10700CDA37E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BCDD4951CB3F10700CDA37E /* Sushi_NekoUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5BCDD4871CB3F10700CDA37E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5BCDD46C1CB3F10700CDA37E /* SushiNeko */;
+			targetProxy = 5BCDD4861CB3F10700CDA37E /* PBXContainerItemProxy */;
+		};
+		5BCDD4921CB3F10700CDA37E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5BCDD46C1CB3F10700CDA37E /* SushiNeko */;
+			targetProxy = 5BCDD4911CB3F10700CDA37E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5BCDD4781CB3F10700CDA37E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5BCDD4791CB3F10700CDA37E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5BCDD47D1CB3F10700CDA37E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5BCDD47E1CB3F10700CDA37E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5BCDD4971CB3F10700CDA37E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5BCDD4981CB3F10700CDA37E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5BCDD49A1CB3F10700CDA37E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 60476900E1B7087DFC9B318E /* Pods-SushiNeko.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Sushi Neko/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.makeschool.Sushi-Neko";
+				PRODUCT_NAME = SushiNeko;
+			};
+			name = Debug;
+		};
+		5BCDD49B1CB3F10700CDA37E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ADE4C772476F048B024DDB92 /* Pods-SushiNeko.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Sushi Neko/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.makeschool.Sushi-Neko";
+				PRODUCT_NAME = SushiNeko;
+			};
+			name = Release;
+		};
+		5BCDD49D1CB3F10700CDA37E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3126B838311E8CB3E78D16A4 /* Pods-SushiNekoTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = "Sushi NekoTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.makeschool.Sushi-NekoTests";
+				PRODUCT_NAME = SushiNeko;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SushiNeko.app/SushiNeko";
+			};
+			name = Debug;
+		};
+		5BCDD49E1CB3F10700CDA37E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E892F52A186C596BFABC2CC /* Pods-SushiNekoTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Sushi NekoTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.makeschool.Sushi-NekoTests";
+				PRODUCT_NAME = SushiNeko;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SushiNeko.app/SushiNeko";
+			};
+			name = Release;
+		};
+		5BCDD4A01CB3F10700CDA37E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A300B3F6A7D8F3D58E4D3D4E /* Pods-SushiNekoUITests.debug.xcconfig */;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = "Sushi NekoUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.makeschool.Sushi-NekoUITests";
+				PRODUCT_NAME = SushiNeko;
+				TEST_TARGET_NAME = "Sushi Neko";
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		5BCDD4A11CB3F10700CDA37E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD96885FB6B9845F9356F0CF /* Pods-SushiNekoUITests.release.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = "Sushi NekoUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.makeschool.Sushi-NekoUITests";
+				PRODUCT_NAME = SushiNeko;
+				TEST_TARGET_NAME = "Sushi Neko";
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5BCDD4681CB3F10700CDA37E /* Build configuration list for PBXProject "SushiNeko" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BCDD4971CB3F10700CDA37E /* Debug */,
+				5BCDD4981CB3F10700CDA37E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5BCDD4991CB3F10700CDA37E /* Build configuration list for PBXNativeTarget "SushiNeko" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BCDD49A1CB3F10700CDA37E /* Debug */,
+				5BCDD49B1CB3F10700CDA37E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5BCDD49C1CB3F10700CDA37E /* Build configuration list for PBXNativeTarget "SushiNekoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BCDD49D1CB3F10700CDA37E /* Debug */,
+				5BCDD49E1CB3F10700CDA37E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5BCDD49F1CB3F10700CDA37E /* Build configuration list for PBXNativeTarget "SushiNekoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BCDD4A01CB3F10700CDA37E /* Debug */,
+				5BCDD4A11CB3F10700CDA37E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5BCDD4651CB3F10700CDA37E /* Project object */;
+}
