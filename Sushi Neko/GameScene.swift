@@ -286,7 +286,7 @@ class GameScene: SKScene {
             guard let img = UIImage(data: imgData) else { return }
             
             /* Perform code block asynchronously in main queue */
-            dispatch_async(dispatch_get_main_queue(), {
+            dispatch_async(dispatch_get_main_queue()) {
                 
                 /* Create texture from image */
                 let imgTex = SKTexture(image: img)
@@ -304,7 +304,7 @@ class GameScene: SKScene {
                 /* Add profile sprite as child of sushi piece */
                 imgNodeBg.addChild(imgNode)
                 imgNode.zPosition = imgNodeBg.zPosition + 1
-            });
+            }
         }
     }
     
