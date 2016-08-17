@@ -11,20 +11,20 @@ import SpriteKit
 class SushiPiece: SKSpriteNode {
     
     /* Sushi type */
-    var side: Side = .None {
+    var side: Side = .none {
         
         didSet {
             switch side {
-            case .Left:
+            case .left:
                 /* Show left chopstick */
-                leftChopstick.hidden = false
-            case .Right:
+                leftChopstick.isHidden = false
+            case .right:
                 /* Show right chopstick */
-                rightChopstick.hidden = false
-            case .None:
+                rightChopstick.isHidden = false
+            case .none:
                 /* Hide all chopsticks */
-                leftChopstick.hidden = true
-                rightChopstick.hidden = true
+                leftChopstick.isHidden = true
+                rightChopstick.isHidden = true
             }
             
         }
@@ -47,21 +47,21 @@ class SushiPiece: SKSpriteNode {
     func connectChopsticks() {
         /* Connect our child chopstick nodes */
         
-        rightChopstick = childNodeWithName("rightChopstick") as! SKSpriteNode
-        leftChopstick = childNodeWithName("leftChopstick") as! SKSpriteNode
+        rightChopstick = childNode(withName: "rightChopstick") as! SKSpriteNode
+        leftChopstick = childNode(withName: "leftChopstick") as! SKSpriteNode
         
         /* Set the default side */
-        side = .None
+        side = .none
     }
     
-    func flip(side: Side) {
+    func flip(_ side: Side) {
         /* Flip the sushi out of the screen */
         
         var actionName: String = ""
         
-        if side == .Left {
+        if side == .left {
             actionName = "FlipRight"
-        } else if side == .Right {
+        } else if side == .right {
             actionName = "FlipLeft"
         }
         
@@ -73,7 +73,7 @@ class SushiPiece: SKSpriteNode {
         
         /* Build sequence, flip then remove from scene */
         let sequence = SKAction.sequence([flip,remove])
-        runAction(sequence)
+        run(sequence)
     }
     
 }

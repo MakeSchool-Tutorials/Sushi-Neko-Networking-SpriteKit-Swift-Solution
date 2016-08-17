@@ -334,13 +334,16 @@
 				TargetAttributes = {
 					5BCDD46C1CB3F10700CDA37E = {
 						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0800;
 					};
 					5BCDD4841CB3F10700CDA37E = {
 						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = 5BCDD46C1CB3F10700CDA37E;
 					};
 					5BCDD48F1CB3F10700CDA37E = {
 						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = 5BCDD46C1CB3F10700CDA37E;
 					};
 				};
@@ -690,6 +693,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.makeschool.Sushi-Neko";
 				PRODUCT_NAME = SushiNeko;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -702,6 +706,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.makeschool.Sushi-Neko";
 				PRODUCT_NAME = SushiNeko;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -715,6 +720,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.makeschool.Sushi-NekoTests";
 				PRODUCT_NAME = SushiNeko;
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SushiNeko.app/SushiNeko";
 			};
 			name = Debug;
@@ -728,6 +734,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.makeschool.Sushi-NekoTests";
 				PRODUCT_NAME = SushiNeko;
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SushiNeko.app/SushiNeko";
 			};
 			name = Release;
@@ -741,6 +748,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.makeschool.Sushi-NekoUITests";
 				PRODUCT_NAME = SushiNeko;
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = "Sushi Neko";
 				USES_XCTRUNNER = YES;
 			};
@@ -754,6 +762,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.makeschool.Sushi-NekoUITests";
 				PRODUCT_NAME = SushiNeko;
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = "Sushi Neko";
 				USES_XCTRUNNER = YES;
 			};
