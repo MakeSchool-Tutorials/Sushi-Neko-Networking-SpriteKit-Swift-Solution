@@ -142,25 +142,24 @@ class GameScene: SKScene {
             if snapshot.exists() {
                 
                 /* Loop through data entries */
-                for child in snapshot.children {
+                for child in snapshot.children.allObjects as! [FIRDataSnapshot] {
                     
-                    if let child = child as? FIRDataSnapshot {
-                        /* Create new player profile */
-                        var profile = Profile()
+                    /* Create new player profile */
+                    var profile = Profile()
                     
-                        /* Assign player name */
-                        profile.name = child.key
+                    /* Assign player name */
+                    profile.name = child.key
                     
-                        let value = child.value as? NSDictionary
-                        
-                        /* Assign profile data */
-                        profile.imgURL = value?.object(forKey: "image") as! String
-                        profile.facebookId = value?.object(forKey: "id") as! String
-                        profile.score = value?.object(forKey: "score") as! Int
+                    /* Get our dictionary of data */
+                    let data = child.value as? NSDictionary
                     
-                        /* Add new high score profile to score tower using score as index */
-                        self.scoreTower[profile.score] = profile
-                    }
+                    /* Assign profile data */
+                    profile.imgURL = data?.object(forKey: "image") as! String
+                    profile.facebookId = data?.object(forKey: "id") as! String
+                    profile.score = data?.object(forKey: "score") as! Int
+                    
+                    /* Add new high score profile to score tower using score as index */
+                    self.scoreTower[profile.score] = profile
                 }
             }
             
@@ -356,7 +355,7 @@ class GameScene: SKScene {
         
         /* Make the player turn red */
         character.run(SKAction.colorize(with: UIColor.red, colorBlendFactor: 1.0, duration: 0.50))
-        /*
+        
         /* Check for new high score and has a facebook user id */
         if score > playerProfile.score && !playerProfile.facebookId.isEmpty {
             
@@ -369,17 +368,16 @@ class GameScene: SKScene {
                     "score" : playerProfile.score,
                     "id" : playerProfile.facebookId ]]
             
-            /* Save to Firebase */
+            /* Save to Firebase */ 
             firebaseRef.updateChildValues(saveProfile, withCompletionBlock: {
-                (error:NSError?, ref:FIRDatabaseReference!) in
+                (error:Error?, ref:FIRDatabaseReference!) in
                 if (error != nil) {
-                    print("Data save failed: ",error)
+                    print("Data save failed: ", error)
                 } else {
                     print("Data saved success")
                 }
             })
-            
-        } */
+        } 
         
         /* Change play button selection handler */
         playButton.selectedHandler = {
