@@ -15,12 +15,12 @@ import FBSDKLoginKit
 
 /* Tracking enum for use with character and sushi side */
 enum Side {
-    case Left, Right, None
+    case left, right, none
 }
 
 /* Tracking enum for game state */
 enum GameState {
-    case Loading, Title, Ready, Playing, GameOver
+    case loading, title, ready, playing, gameOver
 }
 
 /* Social profile structure */
@@ -48,9 +48,9 @@ class GameScene: SKScene {
     var scoreTower: [Int:Profile] = [:]
     
     /* Game management */
-    var state: GameState = .Loading {
+    var state: GameState = .loading {
         didSet {
-            if state == .Title {
+            if state == .title {
                 stackSushi()
             }
         }
@@ -76,43 +76,43 @@ class GameScene: SKScene {
     var sushiCounter = 0
     
     /* Firebase connection */
-    var firebaseRef = FIRDatabase.database().referenceWithPath("/highscore")
+    var firebaseRef = FIRDatabase.database().reference(withPath: "/highscore")
     
-    override func didMoveToView(view: SKView) {
+    override func didMove(to view: SKView) {
         /* Setup your scene here */
         
         /* Connect game objects */
-        character = childNodeWithName("character") as! Character
-        sushiBasePiece = childNodeWithName("sushiBasePiece") as! SushiPiece
+        character = childNode(withName: "character") as! Character
+        sushiBasePiece = childNode(withName: "sushiBasePiece") as! SushiPiece
         
         /* UI game objects */
-        playButton = childNodeWithName("playButton") as! MSButtonNode
-        healthBar = childNodeWithName("healthBar") as! SKSpriteNode
-        scoreLabel = childNodeWithName("scoreLabel") as! SKLabelNode
+        playButton = childNode(withName: "playButton") as! MSButtonNode
+        healthBar = childNode(withName: "healthBar") as! SKSpriteNode
+        scoreLabel = childNode(withName: "scoreLabel") as! SKLabelNode
         
         /* Setup play button selection handler */
         playButton.selectedHandler = {
-            
+            [unowned self] in
             /* Start game */
-            self.state = .Ready
+            self.state = .ready
         }
         
         /* Setup chopstick connections */
         sushiBasePiece.connectChopsticks()
         
         /* Facebook authentication check */
-        if (FBSDKAccessToken.currentAccessToken() == nil) {
+        if (FBSDKAccessToken.current() == nil) {
             
             /* No access token, begin FB authentication process */
-            FBSDKLoginManager().logInWithReadPermissions(["public_profile","email","user_friends"], fromViewController:self.view?.window?.rootViewController, handler: {
+            FBSDKLoginManager().logIn(withReadPermissions: ["public_profile","email","user_friends"], from:self.view?.window?.rootViewController, handler: {
                 (facebookResult, facebookError) -> Void in
                 
                 if facebookError != nil {
                     print("Facebook login failed. Error \(facebookError)")
-                } else if facebookResult.isCancelled {
+                } else if facebookResult!.isCancelled {
                     print("Facebook login was cancelled.")
                 } else {
-                    let accessToken = FBSDKAccessToken.currentAccessToken().tokenString
+                    let accessToken = FBSDKAccessToken.current().tokenString
                     
                     print(accessToken)
                 }
@@ -120,27 +120,29 @@ class GameScene: SKScene {
         }
         
         /* Facebook profile lookup */
-        if (FBSDKAccessToken.currentAccessToken() != nil) {
+        if (FBSDKAccessToken.current() != nil) {
             
-            FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, first_name"]).startWithCompletionHandler({ (connection, result, error) -> Void in
+            FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, first_name"]).start(completionHandler: { (connection, result, error) -> Void in
                 if (error == nil){
                 
-                    /* Update player profile */
-                    self.playerProfile.facebookId = result.valueForKey("id") as! String
-                    self.playerProfile.name = result.valueForKey("first_name") as! String
-                    self.playerProfile.imgURL = "https://graph.facebook.com/\(self.playerProfile.facebookId)/picture?type=small"
-                    print(self.playerProfile)
+                    if let result = result as? NSDictionary {
+                        /* Update player profile */
+                        self.playerProfile.facebookId = result.value(forKey: "id") as! String
+                        self.playerProfile.name = result.value(forKey: "first_name") as! String
+                        self.playerProfile.imgURL = "https://graph.facebook.com/\(self.playerProfile.facebookId)/picture?type=small"
+                        print(self.playerProfile)
+                    }
                 }
             })
         }
         
-        firebaseRef.queryOrderedByChild("score").queryLimitedToLast(5).observeEventType(.Value, withBlock: { snapshot in
+        firebaseRef.queryOrdered(byChild: "score").queryLimited(toLast: 5).observe(.value, with: { snapshot in
             
             /* Check snapshot has results */
             if snapshot.exists() {
                 
                 /* Loop through data entries */
-                for child in snapshot.children {
+                for child in snapshot.children.allObjects as! [FIRDataSnapshot] {
                     
                     /* Create new player profile */
                     var profile = Profile()
@@ -148,17 +150,20 @@ class GameScene: SKScene {
                     /* Assign player name */
                     profile.name = child.key
                     
+                    /* Get our dictionary of data */
+                    let data = child.value as? NSDictionary
+                    
                     /* Assign profile data */
-                    profile.imgURL = child.value.objectForKey("image") as! String
-                    profile.facebookId = child.value.objectForKey("id") as! String
-                    profile.score = child.value.objectForKey("score") as! Int
+                    profile.imgURL = data?.object(forKey: "image") as! String
+                    profile.facebookId = data?.object(forKey: "id") as! String
+                    profile.score = data?.object(forKey: "score") as! Int
                     
                     /* Add new high score profile to score tower using score as index */
                     self.scoreTower[profile.score] = profile
                 }
             }
             
-            self.state = .Title
+            self.state = .title
             
         }) { (error) in
             print(error.localizedDescription)
@@ -170,45 +175,45 @@ class GameScene: SKScene {
         /* Seed the sushi tower */
         
         /* Manually stack the start of the tower */
-        addTowerPiece(.None)
-        addTowerPiece(.Right)
+        addTowerPiece(.none)
+        addTowerPiece(.right)
         
         /* Randomize tower to just outside of the screen */
         addRandomPieces(10)
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         /* Called when a touch begins */
         
         /* Game not ready to play */
-        if state == .GameOver || state == .Title { return }
+        if state == .gameOver || state == .title { return }
         
         /* Game begins on first touch */
-        if state == .Ready {
-            state = .Playing
+        if state == .ready {
+            state = .playing
         }
         
         for touch in touches {
             
             /* Get touch position in scene */
-            let location = touch.locationInNode(self)
+            let location = touch.location(in: self)
             
             /* Was touch on left/right hand side of screen? */
             if location.x > size.width / 2 {
-                character.side = .Right
+                character.side = .right
             } else {
-                character.side = .Left
+                character.side = .left
             }
             
             /* Grab sushi piece on top of the base sushi piece, it will always be 'first' */
-            let firstPiece = sushiTower.first as SushiPiece!
+            let firstPiece: SushiPiece! = sushiTower.first
             
             /* Check character side against sushi piece side (this is our death collision check)*/
             if character.side == firstPiece.side {
                 
                 /* Drop all the sushi pieces down a place (visually) */
-                for node:SushiPiece in sushiTower {
-                    node.runAction(SKAction.moveBy(CGVector(dx: 0, dy: -55), duration: 0.10))
+                for sushiPiece in sushiTower {
+                    sushiPiece.run(SKAction.move(by: CGVector(dx: 0, dy: -55), duration: 0.10))
                 }
                 
                 gameOver()
@@ -234,15 +239,15 @@ class GameScene: SKScene {
             
             /* Drop all the sushi pieces down one place */
             for node:SushiPiece in sushiTower {
-                node.runAction(SKAction.moveBy(CGVector(dx: 0, dy: -55), duration: 0.10))
+                node.run(SKAction.move(by: CGVector(dx: 0, dy: -55), duration: 0.10))
                 
                 /* Reduce zPosition to stop zPosition climbing over UI */
-                node.zPosition--
+                node.zPosition -= 1
             }
         }
     }
     
-    func addTowerPiece(side: Side) {
+    func addTowerPiece(_ side: Side) {
         /* Add a new sushi piece to the sushi tower */
         
         /* Copy original sushi piece */
@@ -276,23 +281,23 @@ class GameScene: SKScene {
         guard let profile = scoreTower[sushiCounter] else { return }
         
         /* Grab profile image */
-        guard let imgURL = NSURL(string: profile.imgURL) else { return }
+        guard let imgURL = URL(string: profile.imgURL) else { return }
         
         /* Perform code block asynchronously in background queue */
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
+        DispatchQueue.global(qos: DispatchQoS.QoSClass.default).async {
             
             /* Perform image download task */
-            guard let imgData = NSData(contentsOfURL: imgURL) else { return }
+            guard let imgData = try? Data(contentsOf: imgURL) else { return }
             guard let img = UIImage(data: imgData) else { return }
             
             /* Perform code block asynchronously in main queue */
-            dispatch_async(dispatch_get_main_queue()) {
+            DispatchQueue.main.async {
                 
                 /* Create texture from image */
                 let imgTex = SKTexture(image: img)
                 
                 /* Create background border */
-                let imgNodeBg = SKSpriteNode(color: UIColor.grayColor(), size: CGSize(width: 52, height: 52))
+                let imgNodeBg = SKSpriteNode(color: UIColor.gray, size: CGSize(width: 52, height: 52))
                 
                 /* Add as child of sushi piece */
                 newPiece.addChild(imgNodeBg)
@@ -308,7 +313,7 @@ class GameScene: SKScene {
         }
     }
     
-    func addRandomPieces(total: Int) {
+    func addRandomPieces(_ total: Int) {
         /* Add random sushi pieces to the sushi tower */
         
         for _ in 1...total {
@@ -317,8 +322,8 @@ class GameScene: SKScene {
             let lastPiece = sushiTower.last as SushiPiece!
             
             /* Need to ensure we don't create impossible sushi structures */
-            if lastPiece.side != .None {
-                addTowerPiece(.None)
+            if lastPiece!.side != Side.none {
+                addTowerPiece(.none)
             } else {
                 
                 /* Random Number Generator */
@@ -326,13 +331,13 @@ class GameScene: SKScene {
                 
                 if rand < 0.45 {
                     /* 45% Chance of a left piece */
-                    addTowerPiece(.Left)
+                    addTowerPiece(.left)
                 } else if rand < 0.9 {
                     /* 45% Chance of a right piece */
-                    addTowerPiece(.Right)
+                    addTowerPiece(.right)
                 } else {
                     /* 10% Chance of an empty piece */
-                    addTowerPiece(.None)
+                    addTowerPiece(.none)
                 }
             }
         }
@@ -341,15 +346,15 @@ class GameScene: SKScene {
     func gameOver() {
         /* Game over! */
         
-        state = .GameOver
+        state = .gameOver
         
         /* Turn all the sushi pieces red*/
         for node:SushiPiece in sushiTower {
-            node.runAction(SKAction.colorizeWithColor(UIColor.redColor(), colorBlendFactor: 1.0, duration: 0.50))
+            node.run(SKAction.colorize(with: UIColor.red, colorBlendFactor: 1.0, duration: 0.50))
         }
         
         /* Make the player turn red */
-        character.runAction(SKAction.colorizeWithColor(UIColor.redColor(), colorBlendFactor: 1.0, duration: 0.50))
+        character.run(SKAction.colorize(with: UIColor.red, colorBlendFactor: 1.0, duration: 0.50))
         
         /* Check for new high score and has a facebook user id */
         if score > playerProfile.score && !playerProfile.facebookId.isEmpty {
@@ -363,38 +368,37 @@ class GameScene: SKScene {
                     "score" : playerProfile.score,
                     "id" : playerProfile.facebookId ]]
             
-            /* Save to Firebase */
+            /* Save to Firebase */ 
             firebaseRef.updateChildValues(saveProfile, withCompletionBlock: {
-                (error:NSError?, ref:FIRDatabaseReference!) in
+                (error:Error?, ref:FIRDatabaseReference!) in
                 if (error != nil) {
-                    print("Data save failed: ",error)
+                    print("Data save failed: ", error)
                 } else {
                     print("Data saved success")
                 }
             })
-            
-        }
+        } 
         
         /* Change play button selection handler */
         playButton.selectedHandler = {
             
             /* Grab reference to our SpriteKit view */
-            let skView = self.view as SKView!
+            let skView  = self.view
             
             /* Load Game scene */
-            let scene = GameScene(fileNamed:"GameScene") as GameScene!
+            let scene = GameScene(fileNamed:"GameScene")
             
             /* Ensure correct aspect mode */
-            scene.scaleMode = .AspectFill
+            scene?.scaleMode = .aspectFill
             
             /* Restart GameScene */
-            skView.presentScene(scene)
+            skView?.presentScene(scene)
         }
     }
     
-    override func update(currentTime: CFTimeInterval) {
+    override func update(_ currentTime: TimeInterval) {
         /* Called before each frame is rendered */
-        if state != .Playing { return }
+        if state != .playing { return }
         
         /* Decrease Health */
         health -= 0.01

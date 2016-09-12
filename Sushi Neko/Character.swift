@@ -11,10 +11,10 @@ import SpriteKit
 class Character: SKSpriteNode {
     
     /* Character side */
-    var side: Side = .Left {
+    var side: Side = .left {
         didSet {
             
-            if side == .Left {
+            if side == .left {
                 xScale = 1
                 position.x = 70
             } else {
@@ -25,7 +25,7 @@ class Character: SKSpriteNode {
             
             /* Load/Run the punch action */
             let punch = SKAction(named: "Punch")!
-            runAction(punch)
+            run(punch)
         }
     }
     
